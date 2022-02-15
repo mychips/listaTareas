@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Tab3Page } from './tab3.page';
+import { Tab2Page } from './tab2.page';
 
 const routes: Routes = [
   {
+    path: 'agregar/:listaId',
+    loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
+  },
+  {
     path: '',
-    component: Tab3Page,
+    component: Tab2Page,
   }
 ];
 
@@ -13,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Tab3PageRoutingModule {}
+export class Tab2PageRoutingModule {}
